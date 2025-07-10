@@ -11,7 +11,7 @@ const Card = ({ title, subtitle, icon, button, children }) => {
     <div
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
-      className="border border-black/[0.2] group/canvas-card flex items-center justify-center p-4 h-[25rem] sm:h-[30rem] relative text-center"
+      className="border border-black/[0.2] group/canvas-card flex items-center justify-center p-4 relative text-center h-[25rem] md:h-[30rem] overflow-hidden"
     >
       <Icon className="absolute h-6 w-6 -top-3 -left-3 text-black" />
       <Icon className="absolute h-6 w-6 -bottom-3 -left-3 text-black" />
@@ -70,7 +70,7 @@ const DetailsSection = () => {
         <h2 className="text-4xl font-bold mb-2 font-display tracking-wider">{detailsContent.title}</h2>
         <TypewriterEffectSmooth words={detailsContent.subtitleWords} className="justify-center" />
 
-        <div className="py-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 w-full max-w-5xl mx-auto px-4">
+        <div className="py-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 w-full max-w-7xl mx-auto px-4">
           {detailsContent.cards.map((item) => (
             <Card key={item.title} title={item.title} subtitle={item.subtitle} icon={item.icon} button={item.button}>
               <CanvasRevealEffect
